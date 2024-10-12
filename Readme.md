@@ -97,3 +97,7 @@ The other files from the zip archives are licensed under the terms described in 
 
 The binary blobs in the `firmware/` directory are licensed under the Cypress wireless driver
 license that is found there.
+
+# Checkout Note 
+
+git submodule update --init
