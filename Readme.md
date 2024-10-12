@@ -12,14 +12,14 @@ This repository contains installable builds of the official
 
 # Initial Notice
 
-__PLEASE READ THE FOLLOWING:__  
+__PLEASE READ THE FOLLOWING:__
 🔻🔻🔻🔻🔻🔻🔻🔻🔻
 
 * Ethernet networking support in Linux requires a recent enough kernel (version 5.7 or
   later)
 
 * SD or wireless support in Linux also requires a recent enough kernel (version 5.12 or
-  later).  
+  later).
   Still, your mileage may vary as to whether these peripherals will actually be usable.
 
 * Many drivers (GPIO, VPU, etc) are still likely to be missing from your OS, and will
@@ -28,9 +28,9 @@ __PLEASE READ THE FOLLOWING:__
 
 * A 3 GB RAM limit is enforced __by default__, even if you are using a Raspberry Pi 4
   model that has 4 GB or 8 GB of RAM, on account that the OS **must** patch DMA access,
-  to work around a hardware bug that is present in the Broadcom SoC.  
+  to work around a hardware bug that is present in the Broadcom SoC.
   For Linux this usually translates to using a recent kernel (version 5.8 or later) and
-  for Windows this requires the installation of a filter driver.  
+  for Windows this requires the installation of a filter driver.
   If you are running an OS that has been adequately patched,  you can disable the 3 GB
   limit by going to `Device Manager` → `Raspberry Pi Configuration` → `Advanced Settings`
   in the UEFI settings.
@@ -54,7 +54,7 @@ __PLEASE READ THE FOLLOWING:__
   UEFI firmware and find that booting from USB or from ESP doesn't work, please visit
   https://github.com/raspberrypi/rpi-eeprom/releases to update your EEPROM.
 
-* Extract all the files from the archive onto the partition you created above.  
+* Extract all the files from the archive onto the partition you created above.
   Note that outside of this `Readme.md`, which you can safely remove, you should not
   change the names of the extracted files and directories.
 
@@ -98,18 +98,19 @@ The other files from the zip archives are licensed under the terms described in 
 The binary blobs in the `firmware/` directory are licensed under the Cypress wireless driver
 license that is found there.
 
-# Checkout Note 
+# Checkout Note
 
 To get a full, buildable EDK II repository, use following steps of git
 command
 
 Submodules
 ----------
+
 ```
 git clone https://github.com/WilsonChenPhx/RPi4.git
 cd RPi4
 git submodule update --init
-  
+
 cd edk2
 git submodule update --init
 cd ../edk2-platforms
@@ -121,13 +122,15 @@ cd ..
 
 Install required software from apt
 ----------------------------------
+
 ```
 sudo apt install build-essential uuid-dev iasl git  nasm  python-is-python3
 sudo apt-get install gcc-aarch64-linux-gnu
 ```
-  
+
 build.sh
 --------
+
 ```
 #!/bin/bash
 
